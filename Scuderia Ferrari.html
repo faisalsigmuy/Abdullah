@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Scuderia Ferrari F1 - Update 2026</title>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --ferrari-red: #ff0000;
+            --ferrari-black: #000000;
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --golden: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--ferrari-black);
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--ferrari-red);
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--ferrari-red);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('faisal.jpg');
+            background-size: 120%;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: var(--ferrari-red);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* --- TIMELINE SECTION --- */
+        .history {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--ferrari-black);
+            text-transform: uppercase;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            border-left: 4px solid var(--ferrari-red);
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--ferrari-black);
+            border: 3px solid var(--ferrari-red);
+            border-radius: 50%;
+        }
+
+        .year {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--ferrari-red);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .title-event {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .desc-event {
+            color: #666;
+        }
+
+        /* --- DRIVERS SECTION --- */
+        .legends {
+            padding: 80px 0;
+            background-color: var(--ferrari-black);
+            color: #fff;
+            text-align: center;
+        }
+
+        .legends .section-title {
+            color: #fff;
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .driver-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 280px;
+            border-top: 3px solid var(--ferrari-red);
+        }
+
+        .driver-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--golden);
+        }
+
+        /* --- CURRENT STATUS --- */
+        .current-status {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .status-box {
+            max-width: 800px;
+            margin: auto;
+            background: var(--ferrari-red);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .status-box h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .status-box .driver-pair {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .driver-pair div {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 200px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #111;
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .container { flex-direction: column; }
+            nav { margin-top: 10px; }
+            nav ul { margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span>Ferrari F1</span> History
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#sejarah">Sejarah</a></li>
+                    <li><a href="#current">Tim Saat Ini</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <h1>Scuderia Ferrari</h1>
+        <p>Kuda Jantan yang Berlari Tanpa Henti. Tim paling bersejarah dan penuh gairah di dunia Formula 1.</p>
+        <a href="#sejarah" class="btn">Scroll Kebawah</a>
+    </section>
+
+    <!-- SEJARAH TIMELINE -->
+    <section id="sejarah" class="history">
+        <h2 class="section-title">Lini Masa Kejayaan Ferrari</h2>
+        
+        <div class="timeline">
+            <!-- 1929 -->
+            <div class="timeline-item">
+                <span class="year">1929</span>
+                <div class="title-event">Awal Mula Scuderia</div>
+                <div class="desc-event">Enzo Ferrari mendirikan Scuderia Ferrari sebagai tim balapan untuk kendaraan Alfa Romeo. Awalnya fokus pada endurance race.</div>
+            </div>
+
+            <!-- 1950 -->
+            <div class="timeline-item">
+                <span class="year">1950</span>
+                <div class="title-event">Masuk ke Formula 1</div>
+                <div class="desc-event">Seri pertama Kejuaraan Dunia F1 dimulai. Ferrari seringkali tampil dengan mobil Silver Arrow (atau merah) di era yang didominasi tim lain.</div>
+            </div>
+
+            <!-- 1952 -->
+            <div class="timeline-item">
+                <span class="year">1952 - 1953</span>
+                <div class="title-event">Era Alberto Ascari</div>
+                <div class="desc-event">Titik cerah pertama. Ascari membawa Ferrari meraih 2x Kejuaraan Dunia (1952 & 1953). Ini menjadi fondasi kejayaan.</div>
+            </div>
+
+            <!-- 1975 -->
+            <div class="timeline-item">
+                <span class="year">1975 - 1977</span>
+                <div class="title-event">Era Niki Lauda</div>
+                <div class="desc-event">Periode penuh drama. Lauda hampir kehilangan nyawa di Nurburgring (1976), tapi kembali dan Meraih 2 Titel Dunia untuk Ferrari.</div>
+            </div>
+
+            <!-- 2000 -->
+            <div class="timeline-item">
+                <span class="year">2000 - 2004</span>
+                <div class="title-event">Era Michael Schumacher</div>
+                <div class="desc-event">Era Keemasan Modern. Ferrari dengan pasangan Schumacher-Brawn mendominasi F1 dengan 5 gelar berturut-turut.</div>
+            </div>
+
+            <!-- 2017 -->
+            <div class="timeline-item">
+                <span class="year">2017 - 2018</span>
+                <div class="title-event">Era Sebastian Vettel</div>
+                <div class="desc-event">Upaya关闭窗口. Vettel hampir menang di Melbourne 2017, dan Ferrari nyaris kedep di 2018, tapi akhirnya kalah dari Mercedes.</div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="timeline-item">
+                <span class="year">2019</span>
+                <div class="title-event">Era Leclerc & Vettel</div>
+                <div class="desc-event">Charles Leclerc bergabung ke Ferrari. Mobil SF90 cukup cepat di kualifikasi tapi tidak konsisten di race.</div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="timeline-item">
+                <span class="year">2022</span>
+                <div class="title-event">Mobil Fenomenal: Ferrari F1-75</div>
+                <div class="desc-event">Ferrari memperkenalkan Ferrari F1-75 yang estetis dan cepat. Leclerc menang di Austria & GB. Namun mobil tidak konsisten dan Red Bull mendominasi.</div>
+            </div>
+
+            <!-- 2023 -->
+            <div class="timeline-item">
+                <span class="year">2023</span>
+                <div class="title-event">Tantangan Baru</div>
+                <div class="desc-event">Ferrari masih berusaha bangkit. Leclerc dan Sainz menjadi duet. Tidak ada gelar constructor, tapi ada beberapa kemenangan.</div>
+            </div>
+
+            <!-- 2024 -->
+            <div class="timeline-item">
+                <span class="year">2024</span>
+                <div class="title-event">Kebangkitan Ferrari</div>
+                <div class="desc-event">Ferrari menunjukkan performa kuat sepanjang musim dengan SF-24. Leclerc berhasil kemenangan di GP Monaco dan GP USA. Tim finish P2 di Konstruktor.</div>
+            </div>
+
+            <!-- 2025 -->
+            <div class="timeline-item">
+                <span class="year">2025</span>
+                <div class="title-event">Kedatangan Lewis Hamilton</div>
+                <div class="desc-event">Peristiwa besar! Lewis Hamilton bergabung ke Ferrari bersama Charles Leclerc. Fans sebut Era "HAML22". Musim masih berlanjut.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRENT STATUS -->
+    <section id="current" class="current-status">
+        <h2 class="section-title">Skuad Ferrari 2026</h2>
+        
+        <div class="status-box">
+            <h3>🔥 Line-Up Terbaru</h3>
+            <div class="driver-pair">
+                <div>
+                    <h4>#16 Charles Leclerc</h4>
+                    <p>Monaco</p>
+                </div>
+                <div>
+                    <h4>#44 Lewis Hamilton</h4>
+                    <p>Inggris</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-style: italic;">Musim 2026 masih berlangsung! Doakan Ferrari kembali ke posisi puncak! 🏆</p>
+        </div>
+    </section>
+
+    <!-- LEGENDS / ICON -->
+    <section id="legends" class="legends">
+        <h2 class="section-title">Pembalap Ikonik Ferrari</h2>
+        <div class="card-grid">
+            <div class="driver-card">
+                <div class="driver-name">M. Schumacher</div>
+                <p>7x Campeon (5x bersama Ferrari)</p>
+            </div>
+            <div class="driver-card">
+                <div class="driver-name">Niki Lauda</div>
+                <p>3x Campeon (2x bersama Ferrari)</p>
+            </div>
+            <div class="driver-card">
+                <div class="driver-name">Alberto Ascari</div>
+                <p>2x Campeon (Sergio merah awal)</p>
+            </div>
+            <div class="driver-card">
+                <div class="driver-name">N. P. Fangio</div>
+                <p>1x Campeon (1958)</p>
+            </div>
+            <div class="driver-card">
+                <div class="driver-name">Jody Scheckter</div>
+                <p>Campeon 1979</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Ferrari F1 History Tribute. Created with ❤️ for Tifosi.</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Effect Muncul saat Scroll (Sederhana)
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = '#000';
+                header.style.opacity = '0.95';
+            } else {
+                header.style.background = '#000';
+            }
+        });
+    </script>
+
+</body>
+</html>
